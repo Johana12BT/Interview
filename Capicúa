@@ -1,0 +1,40 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package capicua.johana_bautista;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author johana
+ */
+public class CapicuaJohana_Bautista {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        int numero, aux, inverso = 0, cifra;
+        Scanner read = new Scanner(System.in);
+        do {
+            System.out.print("Introduce un número mayor o igual a 10: ");
+            numero = read.nextInt();
+        } while (numero < 10);
+
+        aux = numero;
+        while (aux != 0) {
+            cifra = aux % 10;
+            inverso = inverso * 10 + cifra;
+            aux = aux / 10;
+        }
+
+        if (numero == inverso) {
+            System.out.println("Es capicua");
+        } else {
+            System.out.println("No es capicua");
+        }
+    }
+}
